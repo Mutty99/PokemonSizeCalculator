@@ -75,11 +75,11 @@ int main() {
         switch(wurmple) {
             case 1:
                 key = static_cast<int>((pid/65536)%10);
-                std::cout << "Your wurmple will evolve into ";
+                std::cout << "\nYour wurmple will evolve into ";
                 if (key >= 0 && key <= 4)
-                    std::cout << "Silcoon\n";
+                    std::cout << "Silcoon\n\n";
                 else if (key >= 5)
-                    std::cout << "Cascoon\n";
+                    std::cout << "Cascoon\n\n";
                 else
                     fatalError();
                 system("pause");
