@@ -89,6 +89,7 @@ int main() {
             default:
                 clear();
                 std::cout << "Invalid input.\n";
+                std::cin >> wurmple;
                 break;
         }
     }
