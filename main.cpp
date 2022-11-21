@@ -82,6 +82,7 @@ int main() {
                     std::cout << "Cascoon\n";
                 else
                     fatalError();
+                system("pause");
                 return 0;
             case 2:
                 runtime = false;
