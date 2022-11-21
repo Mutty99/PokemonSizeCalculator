@@ -54,6 +54,7 @@ bool PIDCheck(int64_t pid) {
 int main() {
     int64_t pid, choice, height, hp = 0, atk = 0, def = 0, spa = 0, spd = 0, spe = 0;
     int64_t x = 0, y = 0, z = 0;
+    double cos = 2.54;
     bool pWrite = false, runtime = true;
     std::cout << "\nInsert your PID:\n";
     std::cin >> std::hex >> pid;
@@ -218,7 +219,8 @@ int main() {
         }
     }
     auto final = ((((s - z) / y) + x) * height / 100);
-    auto iFinal = floorf((final/2.54)*10)/10;
+    auto val = static_cast<double>(final)/cos;
+    auto iFinal = floorf(static_cast<float>(val)*10)/10;
 
     std::cout << "\nYour pokemon size is: " << std::dec << final << " cm/" << iFinal << " in\n\n";
     system("pause");
