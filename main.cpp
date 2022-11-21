@@ -53,7 +53,8 @@ bool PIDCheck(int64_t pid) {
 
 int main() {
     int64_t pid, choice, height, hp = 0, atk = 0, def = 0, spa = 0, spd = 0, spe = 0;
-    int64_t x = 0, y = 0, z = 0;
+    int64_t x = 0, y = 0, z = 0, key;
+    int wurmple = 0;
     double cos = 2.54;
     bool pWrite = false, runtime = true;
     std::cout << "\nInsert your PID:\n";
@@ -67,6 +68,32 @@ int main() {
         else
             pWrite = true;
     }
+
+    std::cout << "\nIs your pokemon a Wurmple?\n1) Yes\n2) No\n";
+    std::cin >> wurmple;
+    while (runtime) {
+        switch(wurmple) {
+            case 1:
+                key = static_cast<int>((pid/65536)%10);
+                std::cout << "Your wurmple will evolve into ";
+                if (key >= 0 && key <= 4)
+                    std::cout << "Silcoon\n";
+                else if (key >= 5)
+                    std::cout << "Cascoon\n";
+                else
+                    fatalError();
+                return 0;
+            case 2:
+                runtime = false;
+                break;
+            default:
+                clear();
+                std::cout << "Invalid input.\n";
+                break;
+        }
+    }
+
+    runtime = true;
     std::vector<Stat> stats = {
             {"HP", hp},
             {"ATTACK", atk},
